@@ -1,0 +1,21 @@
+# Carpetas generadas automáticamente
+/build/
+/dist/
+/nbproject/private/
+
+# Archivos compilados
+*.class
+
+# Configuración local
+nbproject/private/
+/nbbuild/
+/nbproject/private/config.properties
+/nbproject/private/private.properties
+
+# Archivos temporales del sistema
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
