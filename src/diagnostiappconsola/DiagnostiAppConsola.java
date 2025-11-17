@@ -34,13 +34,35 @@ public class DiagnostiAppConsola {
 
     // -------------------------
     // Inicialización de datos
-    // -------------------------
+    // -------------------------1
     private static void inicializarDiagnosticos() {
+        /*Map<String, String> noEnciende = new LinkedHashMap<>();
+        noEnciende.put("🔌 Verificar cable de alimentación", "👉 Asegúrate de que el cable esté bien conectado y el enchufe funcione.");
+        noEnciende.put("🔋 Revisar batería o cargador", "👉 Si es laptop, prueba con otro cargador o revisa el estado de la batería.");
+        noEnciende.put("⚙️ Revisar fuente de poder", "⚠ Si todo parece correcto y aún no enciende, la fuente de poder puede estar dañada.");
+        diagnosticos.put("El equipo no enciende", noEnciende);*/
         Map<String, String> noEnciende = new LinkedHashMap<>();
         noEnciende.put("🔌 Verificar cable de alimentación", "👉 Asegúrate de que el cable esté bien conectado y el enchufe funcione.");
         noEnciende.put("🔋 Revisar batería o cargador", "👉 Si es laptop, prueba con otro cargador o revisa el estado de la batería.");
         noEnciende.put("⚙️ Revisar fuente de poder", "⚠ Si todo parece correcto y aún no enciende, la fuente de poder puede estar dañada.");
-        diagnosticos.put("El equipo no enciende", noEnciende);
+
+        String[] funcionalidadesComunes = {
+            "Verificar que enchufes y tomas estén conectados y en buen estado.",
+            "Verifica los cables del computador estén conectados y en buen estado.",
+            "Preguntar si el estado fue manipulado por otra persona.",
+            "Registrar cualquier observación antes de continuar."
+        };
+
+        Map<String, String> noEnciendeConComunes = new LinkedHashMap<>();
+        for (Map.Entry<String, String> entry : noEnciende.entrySet()) {
+            String descripcionCompleta = entry.getValue() + "\n";
+            for (String comun : funcionalidadesComunes) {
+                descripcionCompleta += "-> " + comun + "\n";
+            }
+            noEnciendeConComunes.put(entry.getKey(), descripcionCompleta);
+        }
+
+        diagnosticos.put("El equipo no enciende", noEnciendeConComunes);
 
         Map<String, String> noImagen = new LinkedHashMap<>();
         noImagen.put("💾 Verificar memoria RAM", "👉 Asegúrate de que los módulos estén bien insertados en las ranuras.\n⚠ Hazlo con cuidado, evita tocar los conectores dorados.");
